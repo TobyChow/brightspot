@@ -1,0 +1,20 @@
+.checkbox {
+    height:25px;
+    width:25px;
+}
+.description {
+    font-size:1.5rem;
+    color:#9580ff;
+    padding-bottom:8px;
+}
+.card {
+    display:flex;
+    align-items: center;
+    background:#21222c;
+    margin:15px 0;
+    border-radius:5px;
+    padding:15px;
+}
+.card .deleteBtn {
+    margin-left:auto;
+}
