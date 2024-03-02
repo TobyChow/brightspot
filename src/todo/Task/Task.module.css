@@ -3,9 +3,11 @@
     width:25px;
 }
 .description {
-    font-size:1.5rem;
     color:#9580ff;
     padding-bottom:8px;
+    @media (min-width:600px) {
+        font-size:1.5rem;
+    }
 }
 .card {
     display:flex;

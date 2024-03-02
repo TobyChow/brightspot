@@ -5,7 +5,9 @@ nav {
 nav .tab{
     margin:0 5px;
     cursor:pointer;
-    font-size:1.5rem;
+    @media (min-width:600px) {
+        font-size:1.5rem;
+    }
 }
 nav .tab.active {
     border-bottom:3px solid purple;
