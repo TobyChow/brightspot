@@ -6,22 +6,20 @@ import styles from './SearchBar.module.css';
 export default function SearchBar({ setLocation }) {
     const [inputValue, setInputValue] = useState("");
     const [locations, setLocations] = useState([]);
-    const [isFocus, setIsFocus] = useState(false);
 
     function handleInput(inputValue) {
         setInputValue(inputValue);
-        if (!inputValue) return;
     }
 
     function changeLocations(location) {
-        setInputValue('');
         setLocation({
             name: location.display_name, 
             coordinates: {
                 latitude: location.lat,
                 longitude: location.lon
             }
-        })
+        });
+        setInputValue('');
     }
 
     async function getLocations(query) {
@@ -38,7 +36,7 @@ export default function SearchBar({ setLocation }) {
             return locations;
 
         } catch (error) {
-            alert('City not found');
+            console.log(error);
         }
     }
 
@@ -46,7 +44,6 @@ export default function SearchBar({ setLocation }) {
 
     async function fetchLocations() {
         const locationList = await getLocations(inputValue);
-        console.log(locationList);
         setLocations(locationList || []);
     }
 
@@ -61,8 +58,6 @@ export default function SearchBar({ setLocation }) {
                 onChange={e => handleInput(e.target.value)}
                 placeholder="Search location..."
                 className={styles.input}
-                onBlur={() => setIsFocus(false)}
-                onFocus={() => setIsFocus(true)}
             />
             {inputValue && (
                 <SearchBarLocations

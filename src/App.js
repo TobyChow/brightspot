@@ -19,7 +19,7 @@ function App() {
         <>
         {/* <Profile {...profile}/> */}
         <Weather/>
-        {/* <Todo/> */}
+        <Todo/>
         </>
     );
 }

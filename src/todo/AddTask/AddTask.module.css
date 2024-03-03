@@ -3,10 +3,6 @@
     align-items: stretch;
     margin-top:8px;
 }
-.input {
-    width:250px;
-    padding:8px;
-}
 .addButton {
     background:#333;
     color:white;

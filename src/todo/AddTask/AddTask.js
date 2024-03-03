@@ -1,6 +1,7 @@
 import { useState, useContext, useEffect } from 'react';
 import { TasksContext, TasksDispatchContext } from '../TasksContext.js';
 import Button from '../../components/Button/Button.js';
+import Input from '../../components/Input/Input.js';
 import styles from './AddTask.module.css';
 
 let newTaskId;
@@ -27,8 +28,7 @@ export default function AddTask({ onAddTask }) {
 
     return (
         <div className={styles.addTaskContainer}>
-            <input
-                className={styles.input}
+            <Input
                 placeholder="Add task"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
