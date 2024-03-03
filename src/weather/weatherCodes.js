@@ -112,6 +112,12 @@ export const weatherCodes = {
       icon: "thunderstorms-snow",
     },
 };
-export function getWeatherIcon(code) {
-    return `/icons/${weatherCodes[code].icon}.svg`;
+export function getWeatherIcon(weatherData) {
+    const weatherCode = weatherData.current.weather_code;
+    let iconName = weatherCodes[weatherCode].icon;
+    // some weather conditions have a day or night icon
+    if (weatherCode < 50) {
+        iconName += weatherData.current.is_day ? '-day' : '-night';
+    }
+    return `/icons/${iconName}.svg`;
 }

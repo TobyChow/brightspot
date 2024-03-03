@@ -30,7 +30,7 @@ export default function Weather() {
         async function getWeather() {
             if (location.coordinates.latitude) {
                 try {
-                    const url = `https://api.open-meteo.com/v1/forecast?latitude=${location.coordinates.latitude}&longitude=${location.coordinates.longitude}&current=temperature_2m,weather_code`;
+                    const url = `https://api.open-meteo.com/v1/forecast?latitude=${location.coordinates.latitude}&longitude=${location.coordinates.longitude}&current=is_day&current=temperature_2m,weather_code`;
                     const response = await fetch(url);
                     if (!response.ok) {
                         return;
@@ -39,7 +39,7 @@ export default function Weather() {
                     const data = await response.json();
                     setWeatherData(data);
                 } catch (error) {
-                    console.log(error);//todo 
+                    console.log(error);
                 }
             }
         }
@@ -54,7 +54,7 @@ export default function Weather() {
             </div>
             {weatherData && (
                 <>
-                <img src={getWeatherIcon(weatherData.current.weather_code)} alt='logo'/>
+                <img src={getWeatherIcon(weatherData)} alt='logo'/>
                 <div className={styles.temperature}>{weatherData.current.temperature_2m} {weatherData.current_units.temperature_2m}</div>
                 <div className='header-3'>{weatherCodes[weatherData.current.weather_code].description}</div>
                 </>
