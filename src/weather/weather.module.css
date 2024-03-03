@@ -1,0 +1,15 @@
+.container {
+    display:flex;
+    flex-flow:column;
+    align-items:center;
+
+    img {
+        max-width:20rem;
+    }
+
+    .temperature {
+        font-size:5rem;
+    }
+}
+
+

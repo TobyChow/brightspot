@@ -1,0 +1,27 @@
+.list {
+    position: absolute;
+    left:50%;
+    transform:translateX(-50%);
+    margin-top: 0.5rem;
+    padding: 1rem;
+    width:95%;
+    max-width:500px;
+    max-height: 20rem;
+    background-color: white;
+    border-radius: 0.6rem;
+    z-index: 9;
+    overflow-y: scroll;
+    box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.15);
+    list-style-type: none;
+  }
+  .listItem {
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+  .listItem div {
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+  }

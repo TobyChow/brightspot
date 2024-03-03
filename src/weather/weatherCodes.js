@@ -1,4 +1,4 @@
-const weatherCodes = {
+export const weatherCodes = {
     0: {
       description: "Clear Sky",
       icon: "clear",
@@ -111,5 +111,7 @@ const weatherCodes = {
       description: "Thunderstorm with Heavy Hail",
       icon: "thunderstorms-snow",
     },
-  };
-export default weatherCodes;
+};
+export function getWeatherIcon(code) {
+    return `/icons/${weatherCodes[code].icon}.svg`;
+}
