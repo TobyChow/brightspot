@@ -49,14 +49,14 @@ export default function Weather() {
     return (
         <div className={styles.container}>
             <SearchBar setLocation={setLocation}/>
-            <div className='header-3'>
+            <div className='header-2'>
                 {location.name || 'Current Location'}
             </div>
             {weatherData && (
                 <>
                 <img src={getWeatherIcon(weatherData)} alt='logo'/>
                 <div className={styles.temperature}>{weatherData.current.temperature_2m} {weatherData.current_units.temperature_2m}</div>
-                <div className='header-3'>{weatherCodes[weatherData.current.weather_code].description}</div>
+                <div className='header-2'>{weatherCodes[weatherData.current.weather_code].description}</div>
                 </>
             )}
         </div>

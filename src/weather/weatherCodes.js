@@ -119,5 +119,5 @@ export function getWeatherIcon(weatherData) {
     if (weatherCode < 50) {
         iconName += weatherData.current.is_day ? '-day' : '-night';
     }
-    return `/icons/${iconName}.svg`;
+    return `/icons/weather/${iconName}.svg`;
 }

@@ -3,7 +3,7 @@
     width:25px;
 }
 .description {
-    color:#9580ff;
+    color:var(--main-text-color);
     padding-bottom:8px;
     @media (min-width:600px) {
         font-size:1.5rem;
@@ -12,7 +12,7 @@
 .card {
     display:flex;
     align-items: center;
-    background:#21222c;
+    background:var(--main-background);
     margin:15px 0;
     border-radius:5px;
     padding:15px;

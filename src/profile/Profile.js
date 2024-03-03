@@ -1,9 +1,12 @@
+import styles from './Profile.module.css';
+
 export default function Profile({ username, email, picture }) {
     return (
-        <div>
-            <div className="username">{username}</div>
-            <div className="email">{email}</div>
-            <div className="picture">{picture}</div>
+        <div className={styles.profileContainer}> 
+            <div className="header-1">{username}</div>
+            <div className={styles.separator}>|</div>
+            <div>{email}</div>
+            <img className={styles.avatar} src={picture} alt="Avatar"/>
         </div>
     )
 }
