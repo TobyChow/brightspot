@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { weatherCodes, getWeatherIcon } from './weatherCodes.js';
-import SearchBar from './SearchBar/SearchBar.js';
+import { weatherCodes, getWeatherIcon } from './weatherCodes';
+import SearchBar from './SearchBar/SearchBar';
 import styles from './weather.module.css';
 
 export default function Weather() {
@@ -12,7 +12,7 @@ export default function Weather() {
         const fetchLocation = () => {
             function success(position) {
                 const { latitude, longitude } = position.coords;
-                setLocation({name: '', coordinates:{latitude, longitude }});
+                setLocation({name: 'Current Location', coordinates:{latitude, longitude }});
             }
             function error() {
                 setLocation({name: 'Toronto', coordinates:{latitude: 43.714023, longitude: -79.365012}});
@@ -50,11 +50,13 @@ export default function Weather() {
         <div className={styles.container}>
             <SearchBar setLocation={setLocation}/>
             <div className='header-2'>
-                {location.name || 'Current Location'}
+                {location.name || ''}
             </div>
             {weatherData && (
                 <>
-                <img src={getWeatherIcon(weatherData)} alt='logo'/>
+                <div className={styles.imgContainer}>
+                    <img src={getWeatherIcon(weatherData)} alt='Weather Condition'/>
+                </div>
                 <div className={styles.temperature}>{weatherData.current.temperature_2m} {weatherData.current_units.temperature_2m}</div>
                 <div className='header-2'>{weatherCodes[weatherData.current.weather_code].description}</div>
                 </>

@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { TasksContext } from '../TasksContext.js';
+import { TasksContext } from '../TasksContext';
 import styles from '../TaskList/TaskList.module.css';
 
 export default function StatusTab({ taskStatus, setTaskStatus }) {

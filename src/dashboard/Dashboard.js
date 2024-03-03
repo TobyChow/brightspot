@@ -1,8 +1,6 @@
 import { Outlet } from "react-router-dom";
-import Profile from '../profile/Profile.js';
-import Weather from '../weather/Weather.js';
-import Todo from '../todo/Todo.js';
-import Navigation from '../navigation/Navigation.js';
+import Profile from '../profile/Profile';
+import Navigation from '../navigation/Navigation';
 import styles from './Dashboard.module.css';
 
 const profile = {

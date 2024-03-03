@@ -2,14 +2,14 @@
     display:flex;
     flex-flow:column;
     align-items:center;
-
-    img {
-        max-width:20rem;
-    }
-
+    position:relative;
+    
     .temperature {
         font-size:5rem;
     }
 }
-
+.imgContainer {
+    width:320px;
+    height:320px;
+}
 
