@@ -4,12 +4,20 @@
     color:var(--main-text-color);
     display:flex;
     flex-flow:column;
+    width:150px;
+}
+.navigationContainer a {
+    margin:8px 0;
 }
 .navItem {
     padding:8px;
     margin:8px;
+    color:var(--main-text-color);
 }
-.navItem:hover {
-    background:rgb(83, 76, 76);
+:global a.active {
+    border-left:5px solid white;
+}
+a:hover {
+    background:var(--secondary-background);
     cursor:pointer;
 }

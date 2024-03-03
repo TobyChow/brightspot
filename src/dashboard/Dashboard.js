@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import Profile from '../profile/Profile.js';
 import Weather from '../weather/Weather.js';
 import Todo from '../todo/Todo.js';
@@ -20,8 +21,7 @@ export default function Dashboard() {
                 <Navigation/>
             </nav>
             <main>
-                <Weather/>
-                <Todo/>
+                <Outlet />
             </main>
         </div>
     );
