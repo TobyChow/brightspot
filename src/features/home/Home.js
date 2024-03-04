@@ -8,6 +8,9 @@ export default function Home() {
     return (
         <div className={styles.homeLayout}>
             <Card>
+                <header>
+                    <h1>Incompleted Tasks</h1>
+                </header>
                 <TasksProvider>
                     <TaskList taskStatus='incompleted'/>
                 </TasksProvider>

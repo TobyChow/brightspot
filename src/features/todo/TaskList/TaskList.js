@@ -11,7 +11,8 @@ export default function TaskList({ taskStatus }) {
     useEffect(() => {
         setLocalStorageData(LOCAL_STORAGE_KEY_COORDINATES, tasks);
     },[tasks]);
-
+    
+    //todo sort to show incompleted first
     const filteredTasks = tasks.filter(task => {
         if (taskStatus === 'completed') {
             return task.isCompleted;
