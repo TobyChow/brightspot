@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from 'react';
-import SearchBarLocations from './SearchBarList';
-import useDebounce from '../../../hooks/useDebounce';
-import { WeatherContext } from '../WeatherContext';
+import SearchBarLocations from '../SearchBarList';
+import useDebounce from '../../../../hooks/useDebounce';
+import { WeatherContext } from '../../WeatherContext';
 import styles from './SearchBar.module.css';
 
 export default function SearchBar() {

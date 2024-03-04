@@ -1,4 +1,4 @@
-import SearchBar from './SearchBar/SearchBar';
+import SearchBar from './components/SearchBar';
 import CurrentWeather from './CurrentWeather';
 import styles from './weather.module.css';
 import { WeatherProvider } from './WeatherContext';
