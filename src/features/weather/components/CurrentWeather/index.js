@@ -1,6 +1,7 @@
 import { useEffect, useState, useContext } from 'react';
 import { weatherCodes, getWeatherIcon } from '../../weatherCodes';
 import { WeatherContext } from '../../WeatherContext';
+import { getWeather } from '../../api/weather';
 import AdditionalWeatherDetail from '../AdditionalWeatherDetail';
 import styles from '../../../weather/weather.module.css';
 
@@ -10,23 +11,11 @@ export default function CurrentWeather({ showAdditionalDetails=true }) {
     const { location } = weatherContext;
     
     useEffect(() => {
-        async function getWeather() {
-            if (location.coordinates.latitude) {
-                try {
-                    const url = `https://api.open-meteo.com/v1/forecast?latitude=${location.coordinates.latitude}&longitude=${location.coordinates.longitude}&current=is_day,cloud_cover,apparent_temperature,wind_speed_10m,relative_humidity_2m,temperature_2m,weather_code`;
-                    const response = await fetch(url);
-                    if (!response.ok) {
-                        return;
-                    }
-        
-                    const data = await response.json();
-                    setWeatherData(data);
-                } catch (error) {
-                    console.log(error);
-                }
-            }
-        }
-        getWeather();
+        (async () => {
+            const { latitude, longitude } = location.coordinates;
+            const weatherData = await getWeather(latitude, longitude);
+            setWeatherData(weatherData)
+        })();
     }, [location]);
 
     return (

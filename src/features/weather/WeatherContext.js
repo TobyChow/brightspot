@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from 'react';
+import { reverseGeocode } from './api/location';
 import { getLocalStorageData, setLocalStorageData } from '../../utils';
 import { LOCAL_STORAGE_KEY_LOCATION } from '../../utils/constants';
 
@@ -13,20 +14,7 @@ export function WeatherProvider({ children }) {
             setLocation(getLocalStorageData(LOCAL_STORAGE_KEY_LOCATION));
             return;
         }
-        async function reverseGeocode(latitude, longitude) {
-            try {
-                const url = `https://nominatim.openstreetmap.org/reverse?format=geocodejson&lat=${latitude}&lon=${longitude}`;
-                const response = await fetch(url);
-                if (!response.ok) {
-                    return;
-                }
-    
-                const data = await response.json();
-                return data;
-            } catch (error) {
-                console.log(error);
-            }
-        }
+        
         const getCurrentLocation = async () => {
             async function success(position) {
                 const { latitude, longitude } = position.coords;
