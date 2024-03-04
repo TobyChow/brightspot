@@ -1,8 +1,8 @@
 import { TasksProvider } from "../todo/TasksContext";
 import { WeatherProvider } from "../weather/WeatherContext";
-import Card from "../../components/Card/Card";
+import Card from "../../components/Card";
 import TaskList from "../todo/components/TaskList";
-import CurrentWeather from "../weather/CurrentWeather";
+import CurrentWeather from "../weather/components/CurrentWeather";
 import styles from "./Home.module.css";
 
 export default function Home() {

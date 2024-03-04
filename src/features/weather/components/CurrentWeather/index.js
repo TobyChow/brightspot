@@ -1,8 +1,8 @@
 import { useEffect, useState, useContext } from 'react';
-import { weatherCodes, getWeatherIcon } from '../weatherCodes';
-import { WeatherContext } from '../WeatherContext';
+import { weatherCodes, getWeatherIcon } from '../../weatherCodes';
+import { WeatherContext } from '../../WeatherContext';
 import AdditionalWeatherDetail from '../AdditionalWeatherDetail';
-import styles from '../weather.module.css';
+import styles from '../../../weather/weather.module.css';
 
 export default function CurrentWeather({ showAdditionalDetails=true }) {
     const [weatherData, setWeatherData] = useState(null);

@@ -1,5 +1,5 @@
 import SearchBar from './components/SearchBar';
-import CurrentWeather from './CurrentWeather';
+import CurrentWeather from './components/CurrentWeather';
 import styles from './weather.module.css';
 import { WeatherProvider } from './WeatherContext';
 

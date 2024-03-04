@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { TasksDispatchContext } from '../../TasksContext';
 import classNames from 'classnames';
-import Button from '../../../../components/Button/Button';
+import Button from '../../../../components/Button';
 import styles from './Task.module.css';
 
 export default function Task({ id, description, isCompleted }) {
