@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import Profile from '../profile/Profile';
+import Profile from '../profile';
 import Navigation from '../navigation';
 import styles from './Dashboard.module.css';
 
