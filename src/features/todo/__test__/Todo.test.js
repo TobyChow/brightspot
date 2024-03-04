@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import Todo from '../Todo';
+import Todo from '../';
 
 describe('Clicking the add task button adds a task', () => {
     test('add task', () => {

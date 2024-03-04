@@ -1,7 +1,7 @@
 import { TasksProvider } from "../todo/TasksContext";
 import { WeatherProvider } from "../weather/WeatherContext";
 import Card from "../../components/Card/Card";
-import TaskList from "../todo/TaskList/TaskList";
+import TaskList from "../todo/components/TaskList";
 import CurrentWeather from "../weather/CurrentWeather";
 import styles from "./Home.module.css";
 

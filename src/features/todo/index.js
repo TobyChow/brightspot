@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { TasksProvider } from './TasksContext';
-import AddTask from './AddTask/AddTask';
-import TaskList from './TaskList/TaskList';
-import StatusTab from './StatusTab/StatusTab';
+import AddTask from './components/AddTask';
+import TaskList from './components/TaskList';
+import StatusTab from './components/StatusTab';
 import Card from '../../components/Card/Card';
 import styles from './Todo.module.css';
 

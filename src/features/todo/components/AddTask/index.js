@@ -1,7 +1,7 @@
 import { useState, useContext, useEffect } from 'react';
-import { TasksContext, TasksDispatchContext } from '../TasksContext';
-import Button from '../../../components/Button/Button';
-import Input from '../../../components/Input/Input';
+import { TasksContext, TasksDispatchContext } from '../../TasksContext';
+import Button from '../../../../components/Button/Button';
+import Input from '../../../../components/Input/Input';
 import styles from './AddTask.module.css';
 let newTaskId;
 

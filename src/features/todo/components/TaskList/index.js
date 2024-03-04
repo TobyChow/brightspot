@@ -1,9 +1,9 @@
 import { useContext, useEffect } from 'react';
-import { TasksContext } from '../TasksContext';
-import Task from '../Task/Task';
+import { TasksContext } from '../../TasksContext';
+import Task from '../Task';
 import styles from './TaskList.module.css';
-import { setLocalStorageData } from '../../../utils';
-import { LOCAL_STORAGE_KEY_COORDINATES } from '../../../utils/constants';
+import { setLocalStorageData } from '../../../../utils';
+import { LOCAL_STORAGE_KEY_COORDINATES } from '../../../../utils/constants';
 
 export default function TaskList({ taskStatus }) {
     const tasks = useContext(TasksContext);

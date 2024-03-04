@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { profile } from '../../dashboard';
-import Profile from '../Profile';
+import Profile from '../';
 
 test('Profile displays the correct information', () => {
     render(<Profile {...profile}/>);

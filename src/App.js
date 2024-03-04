@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Dashboard from './features/dashboard';
 import Weather from './features/weather';
-import Todo from './features/todo/Todo';
+import Todo from './features/todo';
 import Home from './features/home';
 
 export default function App() {
