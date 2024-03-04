@@ -3,7 +3,7 @@ import Profile from '../profile/Profile';
 import Navigation from '../navigation/Navigation';
 import styles from './Dashboard.module.css';
 
-const profile = {
+export const profile = {
     'username': 'Toby Chow',
     'email': 'toby_chow@hotmail.com',
     'picture': '/icons/sammy.webp'

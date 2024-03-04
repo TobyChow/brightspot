@@ -3,7 +3,7 @@ import { createContext, useReducer } from 'react';
 export const TasksContext = createContext(null);
 export const TasksDispatchContext = createContext(null);
 
-function tasksReducer(tasks, action) {
+export function tasksReducer(tasks, action) {
     switch (action.type) {
         case 'add': {
             return [
