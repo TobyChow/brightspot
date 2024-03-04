@@ -1,9 +1,8 @@
 import { useState, useContext, useEffect } from 'react';
 import { TasksContext, TasksDispatchContext } from '../TasksContext';
-import Button from '../../components/Button/Button';
-import Input from '../../components/Input/Input';
+import Button from '../../../components/Button/Button';
+import Input from '../../../components/Input/Input';
 import styles from './AddTask.module.css';
-
 let newTaskId;
 
 export default function AddTask({ onAddTask }) {
@@ -14,7 +13,7 @@ export default function AddTask({ onAddTask }) {
     useEffect(() => {
         newTaskId = tasks.length;
     }, []);
-    
+
     function handleAddTask(description) {
         if (description !== '') {
             dispatch({

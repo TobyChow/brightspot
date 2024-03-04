@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import useDebounce from '../../hooks/useDebounce';
+import useDebounce from '../../../hooks/useDebounce';
 import SearchBarLocations from './SearchBarList';
 import styles from './SearchBar.module.css';
 

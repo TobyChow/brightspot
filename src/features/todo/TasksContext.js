@@ -1,4 +1,6 @@
 import { createContext, useReducer } from 'react';
+import { getLocalStorageData } from '../../utils';
+import { LOCAL_STORAGE_KEY_COORDINATES } from '../../utils/constants';
 
 export const TasksContext = createContext(null);
 export const TasksDispatchContext = createContext(null);
@@ -30,6 +32,7 @@ export function tasksReducer(tasks, action) {
 }
 
 export function TasksProvider({ children }) {
+    const initialTasks = getLocalStorageData(LOCAL_STORAGE_KEY_COORDINATES) ?? defaultTasks;
     const [tasks, dispatch] = useReducer(tasksReducer, initialTasks);
     return (
         <TasksContext.Provider value={tasks}>
@@ -40,4 +43,4 @@ export function TasksProvider({ children }) {
     );
 }
 
-const initialTasks = [{id:1, description:'eat', isCompleted: true}, {id:2, description:'drink', isCompleted: false}];
+const defaultTasks = [{id:1, description:'eat', isCompleted: true}, {id:2, description:'drink', isCompleted: false}];

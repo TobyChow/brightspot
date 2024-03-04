@@ -1,9 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
 
 import './App.css';
-import Dashboard from './dashboard/Dashboard';
-import Weather from './weather/Weather';
-import Todo from './todo/Todo';
+import Dashboard from './features/dashboard/Dashboard';
+import Weather from './features/weather/Weather';
+import Todo from './features/todo/Todo';
 
 export default function App() {
     return (
