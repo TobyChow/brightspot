@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Profile from '../profile/Profile';
-import Navigation from '../navigation/Navigation';
+import Navigation from '../navigation';
 import styles from './Dashboard.module.css';
 
 export const profile = {
