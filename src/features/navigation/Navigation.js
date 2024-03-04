@@ -20,6 +20,6 @@ export default function Navigation() {
 
 function NavItem({ text }) {
     return (
-        <div className={classNames(styles.navItem, 'header-1')}>{text}</div>
+        <div className={classNames(styles.navItem)}>{text}</div>
     );
 }

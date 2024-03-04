@@ -1,25 +1,26 @@
 .navigationContainer {
-    height:100%;
     background:var(--main-background);
     color:var(--main-text-color);
     display:flex;
-    flex-flow:column;
-    width:150px;
+    width:100%;
 }
 .navigationContainer a {
-    margin:8px 0;
-    border-left:5px solid transparent;
+    margin:8px;
+    border-bottom:5px solid transparent;
 }
 .navItem {
     padding:8px;
     margin:8px;
     color:var(--main-text-color);
+    @media(min-width:600px) {
+        font-size:1.3rem;
+    }
 }
 :global a.active {
-    border-left:5px solid white;
+    border-bottom:5px solid white;
 }
 a:hover {
-    border-left:5px solid white;
+    border-bottom:5px solid white;
     transition: all 0.3s ease;
     cursor:pointer;
 }
