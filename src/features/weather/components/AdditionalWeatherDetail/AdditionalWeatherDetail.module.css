@@ -1,6 +1,7 @@
 .detailsContainer {
     display:grid;
-    grid-template:1fr 1fr / 1fr 1fr;
+    grid-template:auto auto/ 200px 200px;
+    justify-content:center;
     width:100%;
     margin-top:24px;
 }
@@ -20,4 +21,7 @@
 }
 .card {
     margin:8px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
