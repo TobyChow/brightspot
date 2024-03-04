@@ -1,0 +1,11 @@
+.homeLayout {
+    display:flex;
+    flex-flow:wrap;
+    /* justify-content:center; */
+}
+.homeLayout > * {
+    flex:0 1 500px;
+    margin:16px;
+    max-height:600px;
+    overflow-y:auto;
+}

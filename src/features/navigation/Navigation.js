@@ -5,6 +5,9 @@ import classNames from 'classnames';
 export default function Navigation() {
     return (
         <div className={styles.navigationContainer}>
+            <NavLink to="/">
+                <NavItem text='Home'/>
+            </NavLink>
             <NavLink to="/weather">
                 <NavItem text='Weather'/>
             </NavLink>

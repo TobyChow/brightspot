@@ -7,10 +7,9 @@ import styles from './Todo.module.css';
 
 export default function Todo() {
     const [taskStatus, setTaskStatus] = useState('');
-    
 
     return (
-        <div className={styles.todoContainer}>
+        <div className={`${styles.todoContainer} ${styles.card}`}>
             <TasksProvider>
                 <StatusTab taskStatus={taskStatus} setTaskStatus={setTaskStatus}/>
                 <AddTask />

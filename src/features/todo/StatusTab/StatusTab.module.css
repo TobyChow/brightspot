@@ -8,6 +8,7 @@ nav .tab{
     @media (min-width:600px) {
         font-size:1.5rem;
     }
+    font-family:monospace;
 }
 nav .tab.active {
     border-bottom:3px solid purple;
