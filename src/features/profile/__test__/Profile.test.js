@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { profile } from '../../dashboard/Dashboard';
+import { profile } from '../../dashboard';
 import Profile from '../Profile';
 
 test('Profile displays the correct information', () => {

@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 
 import './App.css';
-import Dashboard from './features/dashboard/Dashboard';
+import Dashboard from './features/dashboard';
 import Weather from './features/weather';
 import Todo from './features/todo/Todo';
 import Home from './features/home/Home';
