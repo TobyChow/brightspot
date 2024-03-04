@@ -1,11 +1,14 @@
-import { useEffect, useState } from 'react';
-import useDebounce from '../../../hooks/useDebounce';
+import { useEffect, useState, useContext } from 'react';
 import SearchBarLocations from './SearchBarList';
+import useDebounce from '../../../hooks/useDebounce';
+import { WeatherContext } from '../WeatherContext';
 import styles from './SearchBar.module.css';
 
-export default function SearchBar({ setLocation }) {
+export default function SearchBar() {
     const [inputValue, setInputValue] = useState("");
-    const [locations, setLocations] = useState([]);
+    const [locationList, setLocationList] = useState([]);
+    const weatherContext = useContext(WeatherContext);
+    const { setLocation } = weatherContext;
 
     function handleInput(inputValue) {
         setInputValue(inputValue);
@@ -44,7 +47,7 @@ export default function SearchBar({ setLocation }) {
 
     async function fetchLocations() {
         const locationList = await getLocations(inputValue);
-        setLocations(locationList || []);
+        setLocationList(locationList || []);
     }
 
     useEffect(() => {
@@ -61,7 +64,7 @@ export default function SearchBar({ setLocation }) {
             />
             {inputValue && (
                 <SearchBarLocations
-                    locations={locations}
+                    locations={locationList}
                     changeLocations={changeLocations}
                 />
             )}

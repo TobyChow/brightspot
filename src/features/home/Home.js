@@ -1,7 +1,8 @@
 import { TasksProvider } from "../todo/TasksContext";
+import { WeatherProvider } from "../weather/WeatherContext";
 import Card from "../../components/Card/Card";
 import TaskList from "../todo/TaskList/TaskList";
-import Weather from "../weather/Weather";
+import CurrentWeather from "../weather/CurrentWeather";
 import styles from "./Home.module.css";
 
 export default function Home() {
@@ -16,7 +17,9 @@ export default function Home() {
                 </TasksProvider>
             </Card>
             <Card>
-                <Weather/>
+                <WeatherProvider>
+                    <CurrentWeather/>
+                </WeatherProvider>
             </Card>
         </div>
     );

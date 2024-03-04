@@ -9,9 +9,10 @@ export default function AddTask({ onAddTask }) {
     const [description, setDescription] = useState('');
     const dispatch = useContext(TasksDispatchContext);
     const tasks = useContext(TasksContext);
-
+    
+    // Get a unique id for the task
     useEffect(() => {
-        newTaskId = tasks.length;
+        newTaskId = tasks.reduce((maxId, curr) => Math.max(maxId, curr.id), 1);
     }, []);
 
     function handleAddTask(description) {
