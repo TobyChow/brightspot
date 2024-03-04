@@ -18,7 +18,7 @@ export default function Home() {
             </Card>
             <Card>
                 <WeatherProvider>
-                    <CurrentWeather/>
+                    <CurrentWeather showAdditionalDetails={false}/>
                 </WeatherProvider>
             </Card>
         </div>
