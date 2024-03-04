@@ -4,7 +4,7 @@ import './App.css';
 import Dashboard from './features/dashboard';
 import Weather from './features/weather';
 import Todo from './features/todo/Todo';
-import Home from './features/home/Home';
+import Home from './features/home';
 
 export default function App() {
     return (
