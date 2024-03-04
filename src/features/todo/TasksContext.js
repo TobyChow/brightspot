@@ -43,4 +43,4 @@ export function TasksProvider({ children }) {
     );
 }
 
-const defaultTasks = [{id:1, description:'eat', isCompleted: true}, {id:2, description:'drink', isCompleted: false}];
+const defaultTasks = [{id:1, description:'Buy Bacon', isCompleted: true}, {id:2, description:'Learn React', isCompleted: false}];

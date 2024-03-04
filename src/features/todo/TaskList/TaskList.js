@@ -12,7 +12,6 @@ export default function TaskList({ taskStatus }) {
         setLocalStorageData(LOCAL_STORAGE_KEY_COORDINATES, tasks);
     },[tasks]);
     
-    //todo sort to show incompleted first
     const filteredTasks = tasks.filter(task => {
         if (taskStatus === 'completed') {
             return task.isCompleted;
@@ -22,6 +21,7 @@ export default function TaskList({ taskStatus }) {
             return task;
         }
     });
+    filteredTasks.sort((a,b) => a.isCompleted - b.isCompleted)
 
     return (
         <div>

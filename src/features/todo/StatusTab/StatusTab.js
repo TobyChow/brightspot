@@ -18,17 +18,17 @@ export default function StatusTab({ taskStatus, setTaskStatus }) {
             <div 
                 className={`${styles.tab} ${taskStatus === '' ? styles.active : ''}`} 
                 onClick={() => handleStatusTab('')}>
-                    All ({numTotalTasks})
+                    All({numTotalTasks})
             </div>
             <div 
                 className={`${styles.tab} ${taskStatus === 'incompleted' ? styles.active : ''}`} 
                 onClick={() => handleStatusTab('incompleted')}>
-                    Incompleted ({numIncompletedTasks})
+                    Incompleted({numIncompletedTasks})
             </div>
             <div 
                 className={`${styles.tab} ${taskStatus === 'completed' ? styles.active : ''}`} 
                 onClick={() => handleStatusTab('completed')}>
-                    Completed ({numCompletedTasks})
+                    Completed({numCompletedTasks})
             </div>
         </nav>
     );
