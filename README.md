@@ -11,6 +11,9 @@ A development server will start at `localhost:3000`
 
 To access site on mobile, use `<your_ip_address>:3000`
 
+# Live Demo
+[Live Demo hosted by AWS](https://main.d3ly37aovn6mq4.amplifyapp.com/)
+
 # Folder Structure
 - `components/` - shared components across the app (ex: buttons, input, card, etc..)
 
@@ -79,6 +82,11 @@ A default todo is provided is none exist in storage.
 ### Design
 <img src=./readme/todo.svg>
 
+## Styling
+I used CSS modules, everything is written in vanilla CSS.
+
+I avoided using a library to demonstrate my CSS.
+
 ## Testing
 `npm run test`
 
@@ -86,3 +94,14 @@ Example of a test is in `features/todo/__test__`, which tests the reducer
 
 ## Routing
 Routing is handled with React Router in `App.js`
+
+## Possible Improvements
+I avoided libraries on purpose to demonstrate my skills in vanilla. As such, there are possible improvements to streamline deployment.
+
+- Use a CSS library such as Tailwind.
+
+- Migrate away from CRA, use an alternative like `Vite` or `Next.js`. [Issues with CRA](https://github.com/reactjs/react.dev/pull/5487#issuecomment-1409720741) are discussed here by one of the members of the official React team.
+
+- Use `React Query` to handle data fetching, as it also offers more features such as caching.
+
+- A more larger project with complicated state management should consider a state management library such as `Redux`.
