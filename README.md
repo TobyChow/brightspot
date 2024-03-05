@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# Installation
+1. `git clone https://github.com/TobyChow/brightspot.git`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+2. `cd brightspot`
 
-## Available Scripts
+3. `npm install`
 
-In the project directory, you can run:
+4. `npm start`
 
-### `npm start`
+A development server will start at `localhost:3000`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To access site on mobile, use `<your_ip_address>:3000`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Folder Structure
+- `components/` - shared components across the app (ex: buttons, input, card, etc..)
 
-### `npm test`
+- `features/` - specific feature requirements (ex: profile, todo, weather, etc...)
+    - `weather`
+        - `api/` - connection to external apis
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+        - `components/` - specific components to weahter (ex:search bar)
 
-### `npm run build`
+        - `index.js` - entry point for `<Weather/>` component
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+        - `weatherCodes.js` - helper file to translate weather codes to human-friendly 
+        descriptions
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+        - `WeatherContext.js` - Provider to consolidate weather component state
+    - `todo`
+        - `__test__` - test cases
+        
+- `hooks/` - shared custom hooks
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- `utils/` - utility functions
 
-### `npm run eject`
+    - `constants` - constant strings
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    - `index.js` - generic helper functions (ex: get and set 
+    data to localstorage)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- `App.css` - global styling
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Feature Design
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Home Page
+A simplified view of the Todo and Weather widget is shown here.
 
-## Learn More
+The todo widget only shows incompleted tasks.
+The weather widget only shows weather for the user's current location.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+In the respective `Weather` and `Todo` pages, all details will be shown.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Profile
+`<Profile/>` accepts `username`, `email`, and `picture` as a prop
 
-### Code Splitting
+## Weather 
+### Handling User's Location
+Use browser's `navigator.geolocation` API to get coordinates of user (if permission is allowed).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Use [nominatim reverse geocode API](https://nominatim.org/release-docs/develop/api/Reverse/) to get user's city name from coordinates.
 
-### Analyzing the Bundle Size
+### Get Weather Information
+Use [open-meteo weather API](https://open-meteo.com/en/docs) to get weather information from coordinates
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Design
+<img src=./readme/weather.svg>
 
-### Making a Progressive Web App
+## Todo
+### Add, Delete, Complete Tasks
+This is handled by the `tasksReducer` in `TaskContext.js`, using the Context API.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Storing state
+State is managed with the `TasksProvider` in `TaskContext.js`.
 
-### Advanced Configuration
+The tasks are first retrieved from localstorage, and stored in the `tasks` state.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+A default todo is provided is none exist in storage.
 
-### Deployment
+### Design
+<img src=./readme/todo.svg>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Testing
+`npm run test`
 
-### `npm run build` fails to minify
+Example of a test is in `features/todo/__test__`, which tests the reducer
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Routing
+Routing is handled with React Router in `App.js`
